@@ -180,7 +180,7 @@ class _TIMUIKitFileElemState extends TIMUIKitState<TIMUIKitFileElem> {
       } else {
         final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
         AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-        if ((androidInfo.version.sdkInt) >= 33) {
+        if ((androidInfo.version.sdkInt??0) >= 33) {
         } else {
           var storage = await Permissions.checkPermission(
             context,
@@ -205,7 +205,7 @@ class _TIMUIKitFileElemState extends TIMUIKitState<TIMUIKitFileElem> {
       } else {
         final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
         AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-        if ((androidInfo.version.sdkInt) >= 33) {
+        if ((androidInfo.version.sdkInt??0) >= 33) {
         } else {
           var storage = await Permissions.checkPermission(
             context,

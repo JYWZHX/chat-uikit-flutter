@@ -141,7 +141,7 @@ class _TIMUIKitImageElem extends TIMUIKitState<TIMUIKitImageElem> {
       final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
       AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
       if (PlatformUtils().isMobile) {
-        if ((androidInfo.version.sdkInt) >= 33) {
+        if ((androidInfo.version.sdkInt??0) >= 33) {
           final photos = await Permissions.checkPermission(
             context,
             Permission.photos.value,

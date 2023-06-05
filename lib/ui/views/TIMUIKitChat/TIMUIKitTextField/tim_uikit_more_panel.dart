@@ -360,7 +360,7 @@ class _MorePanelState extends TIMUIKitState<MorePanel> {
       if (PlatformUtils().isMobile){
         if(PlatformUtils().isAndroid){
           AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-          if ((androidInfo.version.sdkInt) >= 33) {
+          if ((androidInfo.version.sdkInt ?? 0) >= 33) {
             final videos = await Permissions.checkPermission(
               context,Permission.videos.value,
               theme,
